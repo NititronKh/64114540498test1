@@ -1,0 +1,10 @@
+<a href="{% url 'search' %}">ค้นหา</a>
+<a href="{% url 'search_by_name' %}">ค้นหาด้วยชื่อ</a>
+<title>รายการวิชา</title>
+<div id="course-list">
+    <ul>
+        {% for course in courses %}
+            <li>{{ course.name }}</li>
+        {% endfor %}
+    </ul>
+</div>

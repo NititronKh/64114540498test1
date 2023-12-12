@@ -1,0 +1,14 @@
+<title>ค้นหารายวิชา</title>
+<h1>ค้นหารายวิชา</h1>
+<form action="{% url 'search' %}" method="post">
+    <label for="course_code">รหัสวิชา</label>
+    <input type="text" id="course_code" name="course_code" requried>
+    <button type="submit">ค้นหา</button>
+</form>
+{% if result %}
+    <div id="search-result">
+        <h2>ผลลัพธ์การค้นหา</h2>
+        <p>รหัสวิชา: {{ result.code }}</p>
+        <p>ชื่อวิชา: {{ result.name }}</p>
+    </div>
+{% endif %}

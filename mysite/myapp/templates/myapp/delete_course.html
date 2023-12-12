@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ลบรายวิชา</title>
+</head>
+<body>
+
+<h1>ลบรายวิชา</h1>
+
+<p>คุณแน่ใจหรือไม่ที่ต้องการลบรายวิชา "{{ result.name }}" (รหัสวิชา: {{ result.code }})?</p>
+
+<form action="{% url 'delete_course' code=result.code %}" method="post">
+    {% csrf_token %}
+    <button type="submit">ลบ</button>
+    <a href="{% url 'index' %}">ยกเลิก</a>
+</form>
+
+</body>
+</html>
